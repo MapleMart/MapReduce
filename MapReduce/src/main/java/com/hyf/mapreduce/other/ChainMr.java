@@ -24,7 +24,6 @@ public class ChainMr
 {
 	private static class Mapper1 extends MapReduceBase implements Mapper<LongWritable, Text, Text, Text>
 	{
-		@Override
 		public void map(LongWritable key, Text value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException
 		{
 			String texts[] = value.toString().split(",");
@@ -45,7 +44,6 @@ public class ChainMr
 
 	private static class Mapper2 extends MapReduceBase implements Mapper<Text, Text, Text, Text>
 	{
-		@Override
 		public void map(Text key, Text value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException
 		{
 			int count = Integer.parseInt(value.toString());
@@ -63,7 +61,6 @@ public class ChainMr
 	private static class Reducer3 extends MapReduceBase implements Reducer<Text, Text, Text, Text>
 	{
 
-		@Override
 		public void reduce(Text key, Iterator<Text> values, OutputCollector<Text, Text> output, Reporter reporter) throws IOException
 		{
 			int sum = 0;
@@ -82,7 +79,6 @@ public class ChainMr
 
 	private static class Mapper4 extends MapReduceBase implements Mapper<Text, Text, Text, Text>
 	{
-		@Override
 		public void map(Text key, Text value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException
 		{
 			int len = key.toString().trim().length();

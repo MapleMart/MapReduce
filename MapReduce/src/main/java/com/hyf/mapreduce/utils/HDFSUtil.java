@@ -3,11 +3,8 @@ package com.hyf.mapreduce.utils;
 import java.io.IOException;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FSDataInputStream;
-import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IOUtils;
 
 /**
  * HDFS操作:(1、连接到hadoop2.7.1的HDFS把文件上传到hadoop服务器里)
@@ -24,7 +21,7 @@ public class HDFSUtil
 	static
 	{
 		// 1、连接到hadoop2.7.1的HDFS
-		conf.set("fs.default.name", "hdfs://192.168.1.20:9000");// 如果不写就只能本地操作了 hdfs://master:9000(也可以这样写,不过要做主机名master映射)
+		conf.set("fs.default.name", "hdfs://master:9000");// 如果不写就只能本地操作了 hdfs://master:9000(也可以这样写,不过要做主机名master映射)
 		conf.set("hadoop.job.ugi", "root,root");// 如果不写系统将按照默认的用户进行操作
 	}
 

@@ -68,9 +68,9 @@ public class AccessLogUvMr
 	public static void main(String[] args) throws Exception
 	{
 		//创建hadoop里的hdfs的文件夹
-//		HDFSUtil.mkdirsFile("hdfs://192.168.1.20:9000/data");
+		HDFSUtil.mkdirsFile("hdfs://master:9000/data");
 		//把nginx的日志access.log文件上传到hadoop的文件系统里
-//		HDFSUtil.copyFromLocalFile("E:\\access.log", "hdfs://192.168.1.20:9000/data");
+		HDFSUtil.copyFromLocalFile("/Users/huangyongfeng/Documents/learning-resources/hadoop/access.log", "hdfs://master:9000/data");
 		
 		DateToNUM.initMap();
 		Configuration conf = new Configuration();
